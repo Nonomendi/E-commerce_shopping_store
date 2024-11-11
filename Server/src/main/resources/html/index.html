@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Store</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your external CSS file -->
+</head>
+<body onload="openStore()">
+    <header>
+        <nav>
+            <a href="add_product.html">
+                <img src="./img/add.png" alt="Add Product" id="add" class="icons" title="Add Product">
+            </a>
+            <img id="delete" src="img/delete.png" alt="Delete Products" onclick="deleteProducts()" class="icons" title="Delete Products">
+            <a href="./login.html">
+                <img src="img/login.png" alt="Login" id="login" class="icons" title="Login">
+            </a>
+            <a href="./signup.html">
+                <img src="img/signup.png" alt="Sign Up" id="signup" class="icons" title="Sign Up">
+            </a>
+            <a href="./basket.html">
+                <img src="img/cart.png" alt="Basket" id="basket" class="icons" title="Basket">
+            </a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <h1>Welcome to Stunning Store</h1>
+        <p>Discover, manage, and shop with ease.</p>
+    </main>
+
+    <section id="products">
+        <div id="results"></div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
