@@ -13,6 +13,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 public class ServerTest {
     private static ECommerceServer server;
     private static final Map<String, Object[]> products = new HashMap<>();

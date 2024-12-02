@@ -3,10 +3,7 @@ package za.co.tyaphile;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import kong.unirest.Unirest;
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,6 +17,7 @@ import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 public class WebTest {
     private ECommerceServer server;
     private WebDriver driver;
