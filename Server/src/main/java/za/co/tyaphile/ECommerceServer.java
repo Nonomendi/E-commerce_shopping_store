@@ -3,7 +3,7 @@ package za.co.tyaphile;
 import io.javalin.Javalin;
 import io.javalin.http.HttpStatus;
 import io.javalin.http.staticfiles.Location;
-import io.javalin.plugin.bundled.CorsPluginCo
+import io.javalin.plugin.bundled.CorsPluginConfig;
 import io.javalin.rendering.template.JavalinThymeleaf;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;

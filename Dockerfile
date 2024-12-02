@@ -1,20 +1,11 @@
-FROM ubuntu:22.04
-MAINTAINER Tech Team "nomendi022@student.wethinkcode.co.za"
-WORKDIR /app
+FROM maven:3.9.8 AS builder
+COPY pom.xml pom.xml
+RUN mkdir Server
+COPY Server/pom.xml Server/pom.xml
+COPY Server/src Server/src
+RUN cd Server && mvn clean package -DskipTests
 
-COPY . .
-
-RUN apt-get update
-RUN apt-get install -y openjdk-11-jre
-RUN apt-get install -y maven
-RUN apt-get install -y git
-RUN mvn clean package
-
-ADD  target/robot_worlds-1.0-SNAPSHOT-jar-with-dependencies.jar /src/robot-world-server.jar
-
-WORKDIR /src
+FROM openjdk:17
+COPY --from=builder Server/target/Server-1.0-SNAPSHOT-jar-with-dependencies.jar app.jar
 EXPOSE 5000
-
-CMD ["java", "-jar", "robot-world-server.jar"]
-
-
+ENTRYPOINT ["java", "-jar", "app.jar"]
